@@ -240,7 +240,7 @@ Some possible extensions of this project include:
 
 ---
 
-# Author
+# Authors
 
 ## Pallavi Dahiya
 
