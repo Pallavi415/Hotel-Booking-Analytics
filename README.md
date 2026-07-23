@@ -1,301 +1,249 @@
-{
- "cells": [
-  {
-   "cell_type": "markdown",
-   "id": "9be44c64-64f0-4176-a007-4c5472027fcc",
-   "metadata": {},
-   "source": [
-    "# Hotel Booking Analytics\n",
-    "\n",
-    "## About the Project\n",
-    "\n",
-    "Data generated through hotel bookings provides valuable insights into customer behavior, reservation patterns, pricing strategies, and hotel operations. Understanding these patterns can help hotels improve decision-making, optimize pricing, and better manage booking demand.\n",
-    "\n",
-    "For this project, I selected the **Hotel Booking Demand** dataset to perform a structured exploratory data analysis (EDA). Rather than focusing only on visualizations, I followed a systematic workflow that began with understanding the dataset, preparing the data for analysis, exploring relationships between variables, and summarizing the findings into meaningful business insights.\n",
-    "\n",
-    "Throughout the analysis, I explored questions such as:\n",
-    "\n",
-    "- How do booking patterns differ between city hotels and resort hotels?\n",
-    "- Which factors are associated with booking cancellations?\n",
-    "- How does room pricing vary across different customer segments?\n",
-    "- What seasonal trends influence hotel bookings?\n",
-    "- Which insights can support better operational and business decisions?\n",
-    "\n",
-    "The project is organized into multiple notebooks, where each notebook focuses on a specific stage of the analysis. This structure keeps the workflow organized and makes it easier to understand how the analysis progresses from raw data to business recommendations.\n",
-    "\n",
-    "---\n",
-    "\n",
-    "## Project Goals\n",
-    "\n",
-    "The primary goals of this project are to:\n",
-    "\n",
-    "- Understand the structure and quality of the dataset.\n",
-    "- Clean and prepare the data for analysis.\n",
-    "- Explore customer booking behavior using exploratory data analysis techniques.\n",
-    "- Identify patterns related to cancellations, pricing, and customer preferences.\n",
-    "- Analyze seasonal booking trends and stay duration.\n",
-    "- Summarize the findings into practical business insights supported by data.\n",
-    "\n",
-    "---\n",
-    "\n",
-    "## Dataset Information\n",
-    "\n",
-    "The analysis is based on the **Hotel Booking Demand** dataset, which contains booking records for both city hotels and resort hotels.\n",
-    "\n",
-    "The dataset includes information related to:\n",
-    "\n",
-    "- Hotel type\n",
-    "- Booking and arrival details\n",
-    "- Customer demographics\n",
-    "- Stay duration\n",
-    "- Room allocation\n",
-    "- Average Daily Rate (ADR)\n",
-    "- Booking cancellations\n",
-    "- Deposit type\n",
-    "- Market segment\n",
-    "- Customer special requests\n",
-    "\n",
-    "Before performing the analysis, the dataset was prepared by handling missing values, removing duplicate records, and creating a cleaned dataset for further exploration.\n",
-    "\n",
-    "---\n",
-    "\n",
-    "## Technologies Used\n",
-    "\n",
-    "The project was developed using the following tools and libraries:\n",
-    "\n",
-    "- Python\n",
-    "- Pandas\n",
-    "- NumPy\n",
-    "- Matplotlib\n",
-    "- Seaborn\n",
-    "- Jupyter Notebook\n",
-    "- Git & GitHub\n",
-    "\n",
-    "---\n",
-    "\n",
-    "## Repository Structure\n",
-    "\n",
-    "```text\n",
-    "Hotel-Booking-Analytics/\n",
-    "│\n",
-    "├── data/\n",
-    "│   ├── hotel_bookings.csv\n",
-    "│   └── hotel_bookings_cleaned.csv\n",
-    "│\n",
-    "├── notebooks/\n",
-    "│   ├── 01_Data_Understanding.ipynb\n",
-    "│   ├── 02_Data_Cleaning.ipynb\n",
-    "│   ├── 03_Univariate_Analysis.ipynb\n",
-    "│   ├── 04_Bivariate_Analysis.ipynb\n",
-    "│   ├── 05_Multivariate_Analysis.ipynb\n",
-    "│   └── 06_Business_Insights.ipynb\n",
-    "│\n",
-    "├── docs/\n",
-    "├── reports/\n",
-    "├── visuals/\n",
-    "│\n",
-    "├── README.md\n",
-    "├── requirements.txt\n",
-    "└── .gitignore\n",
-    "```\n",
-    "\n",
-    "---\n",
-    "\n",
-    "## Analysis Workflow\n",
-    "\n",
-    "The project follows a structured exploratory data analysis workflow consisting of six stages:\n",
-    "\n",
-    "**1. Data Understanding**\n",
-    "\n",
-    "- Examined the dataset structure.\n",
-    "- Reviewed feature information.\n",
-    "- Identified missing values and duplicate records.\n",
-    "- Classified numerical and categorical variables.\n",
-    "\n",
-    "**2. Data Cleaning**\n",
-    "\n",
-    "- Handled missing values using appropriate techniques.\n",
-    "- Removed duplicate records.\n",
-    "- Prepared a clean dataset for analysis.\n",
-    "\n",
-    "**3. Univariate Analysis**\n",
-    "\n",
-    "- Explored individual variables.\n",
-    "- Studied booking behavior, guest composition, stay duration, and pricing.\n",
-    "\n",
-    "**4. Bivariate Analysis**\n",
-    "\n",
-    "- Examined relationships between pairs of variables.\n",
-    "- Analyzed booking cancellations, room pricing, seasonal demand, and customer behavior.\n",
-    "\n",
-    "**5. Multivariate Analysis**\n",
-    "\n",
-    "- Investigated interactions among multiple variables.\n",
-    "- Identified deeper patterns within booking behavior and pricing.\n",
-    "\n",
-    "**6. Business Insights**\n",
-    "\n",
-    "- Summarized the major findings.\n",
-    "- Presented recommendations based on the analysis.\n",
-    "\n",
-    "---\n",
-    "\n",
-    "## Key Findings\n",
-    "\n",
-    "Some of the important observations from the analysis include:\n",
-    "\n",
-    "- Booking cancellations are influenced by booking lead time and deposit type.\n",
-    "- Room pricing varies across hotel types, customer categories, and market segments.\n",
-    "- Hotel bookings show noticeable seasonal trends throughout the year.\n",
-    "- Customer stay patterns differ between city hotels and resort hotels.\n",
-    "- Special requests provide additional insight into customer booking behavior and preferences.\n",
-    "\n",
-    "These findings demonstrate how exploratory data analysis can be used to understand customer behavior and support data-driven decision-making in the hospitality industry.\n",
-    "\n",
-    "---\n",
-    "\n",
-    "## How to Run the Project\n",
-    "\n",
-    "1. Clone the repository.\n",
-    "\n",
-    "```bash\n",
-    "git clone https://github.com/Pallavi415/Hotel-Booking-Analytics.git\n",
-    "```\n",
-    "\n",
-    "2. Navigate to the project directory.\n",
-    "\n",
-    "```bash\n",
-    "cd Hotel-Booking-Analytics\n",
-    "```\n",
-    "\n",
-    "3. Install the required libraries.\n",
-    "\n",
-    "```bash\n",
-    "pip install -r requirements.txt\n",
-    "```\n",
-    "\n",
-    "4. Launch Jupyter Notebook.\n",
-    "\n",
-    "```bash\n",
-    "jupyter notebook\n",
-    "```\n",
-    "\n",
-    "5. Open the notebooks in numerical order to follow the complete analysis workflow.\n",
-    "\n",
-    "---\n",
-    "\n",
-    "## Future Improvements\n",
-    "\n",
-    "The project can be extended by:\n",
-    "\n",
-    "- Developing machine learning models to predict booking cancellations.\n",
-    "- Building an interactive dashboard using Power BI or Tableau.\n",
-    "- Performing customer segmentation using clustering techniques.\n",
-    "- Deploying the analysis through a Streamlit application.\n",
-    "\n",
-    "---\n",
-    "\n",
-    "## Author\n",
-    "\n",
-    "**Pallavi Dahiya**\n",
-    "\n",
-    "B.Tech Computer Science and Engineering\n",
-    "\n",
-    "This project was developed to strengthen practical skills in exploratory data analysis and demonstrate a structured approach to analyzing real-world hotel booking data."
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "ec4d4b12-e8a8-44da-ba40-8749f6dcd6cd",
-   "metadata": {},
-   "source": []
-  },
-  {
-   "cell_type": "markdown",
-   "id": "ea452852-4024-43f0-975f-e05ba65b0a5e",
-   "metadata": {},
-   "source": []
-  },
-  {
-   "cell_type": "markdown",
-   "id": "d9465ce3-e00a-4398-821a-0a8593d540d9",
-   "metadata": {},
-   "source": []
-  },
-  {
-   "cell_type": "markdown",
-   "id": "85733e53-145b-477d-9611-3a8ceb6490af",
-   "metadata": {},
-   "source": []
-  },
-  {
-   "cell_type": "markdown",
-   "id": "15f48f20-5091-4107-8eda-a660c52160ac",
-   "metadata": {},
-   "source": []
-  },
-  {
-   "cell_type": "markdown",
-   "id": "b8e27264-5a59-4089-92d3-749dd2664fab",
-   "metadata": {},
-   "source": []
-  },
-  {
-   "cell_type": "markdown",
-   "id": "76315aec-24ba-4ba8-a3eb-319bb339aa81",
-   "metadata": {},
-   "source": []
-  },
-  {
-   "cell_type": "markdown",
-   "id": "c8b73162-2139-40f1-869f-8e17292f4cdb",
-   "metadata": {},
-   "source": []
-  },
-  {
-   "cell_type": "markdown",
-   "id": "30b43f2c-eca6-4785-b47a-9cc9e8a8f73e",
-   "metadata": {},
-   "source": []
-  },
-  {
-   "cell_type": "markdown",
-   "id": "ba3eb92f-dcfc-4e00-a6ea-c7ddaa36f247",
-   "metadata": {},
-   "source": []
-  },
-  {
-   "cell_type": "markdown",
-   "id": "2f83bf6f-cbbe-4fd3-9682-18cae7b9d53e",
-   "metadata": {},
-   "source": []
-  },
-  {
-   "cell_type": "markdown",
-   "id": "7ba9d1ce-92d4-4adc-a2ec-85be0cd87bd5",
-   "metadata": {},
-   "source": []
-  }
- ],
- "metadata": {
-  "kernelspec": {
-   "display_name": "Python 3 (ipykernel)",
-   "language": "python",
-   "name": "python3"
-  },
-  "language_info": {
-   "codemirror_mode": {
-    "name": "ipython",
-    "version": 3
-   },
-   "file_extension": ".py",
-   "mimetype": "text/x-python",
-   "name": "python",
-   "nbconvert_exporter": "python",
-   "pygments_lexer": "ipython3",
-   "version": "3.13.9"
-  }
- },
- "nbformat": 4,
- "nbformat_minor": 5
-}
+# Hotel Booking Analytics
+
+> A structured Exploratory Data Analysis (EDA) project on the Hotel Booking Demand dataset to understand booking behavior, pricing patterns, cancellation trends, and customer preferences.
+
+> **Project Note:** This repository is organized as a step-by-step EDA workflow. Each notebook represents a specific stage of the analysis, starting from understanding the dataset and ending with business insights. This structure reflects the complete analytical process followed throughout the project.
+
+---
+
+# About the Project
+
+Exploratory Data Analysis is one of the most important stages of any data-driven project. Before building predictive models or drawing conclusions, it is essential to understand the quality of the data, identify patterns, and explore the relationships between variables.
+
+For this project, I worked with the **Hotel Booking Demand** dataset because it provides a realistic business scenario involving customer reservations, hotel operations, pricing strategies, booking cancellations, and seasonal demand.
+
+Rather than performing the complete analysis in a single notebook, I divided the project into multiple stages. Each notebook focuses on a specific part of the workflow, making the analysis easier to follow, reproduce, and maintain.
+
+Throughout the analysis, I explored questions such as:
+
+- How do booking patterns differ between city hotels and resort hotels?
+- Which factors appear to influence booking cancellations?
+- How does room pricing vary across different customer groups and market segments?
+- What seasonal trends can be observed in hotel bookings?
+- Which observations can support better business decisions?
+
+The goal of this project was not only to create visualizations but also to develop a structured understanding of the dataset and summarize the analysis into meaningful business insights.
+
+---
+
+# Quick Overview
+
+| Category | Details |
+|----------|---------|
+| Project Type | Exploratory Data Analysis (EDA) |
+| Domain | Hospitality Analytics |
+| Dataset | Hotel Booking Demand |
+| Language | Python |
+| Libraries | Pandas, NumPy, Matplotlib, Seaborn |
+| Environment | Jupyter Notebook |
+| Version Control | Git & GitHub |
+
+---
+
+# Dataset Information
+
+The analysis is based on the **Hotel Booking Demand** dataset, which contains booking records for both **City Hotel** and **Resort Hotel**.
+
+The dataset includes information related to:
+
+- Hotel type
+- Reservation details
+- Customer demographics
+- Stay duration
+- Market segment
+- Deposit type
+- Average Daily Rate (ADR)
+- Booking cancellations
+- Special requests
+
+Before beginning the analysis, missing values were handled, duplicate records were removed, and the dataset was prepared for further exploration.
+
+---
+
+# Repository Structure
+
+```text
+Hotel-Booking-Analytics/
+│
+├── data/
+│
+├── notebooks/
+│   ├── 01_Data_Understanding.ipynb
+│   ├── 02_Data_Cleaning.ipynb
+│   ├── 03_Univariate_Analysis.ipynb
+│   ├── 04_Bivariate_Analysis.ipynb
+│   ├── 05_Multivariate_Analysis.ipynb
+│   └── 06_Business_Insights.ipynb
+│
+├── visuals/
+│   ├── correlation_heatmap.png
+│   ├── cancellation_analysis.png
+│   ├── lead_time_by_market_segment.png
+│   ├── monthly_booking_analysis.png
+│   ├── adr_by_hotel_market_segment.png
+│   └── special_requests_by_customer_type.png
+│
+├── README.md
+├── requirements.txt
+└── .gitignore
+```
+
+---
+
+# Analysis Workflow
+
+### 01 • Data Understanding
+
+- Explored the dataset structure
+- Reviewed feature information
+- Identified missing values
+- Examined duplicate records
+- Generated descriptive statistics
+
+### 02 • Data Cleaning
+
+- Handled missing values
+- Removed duplicate records
+- Prepared the dataset for analysis
+
+### 03 • Univariate Analysis
+
+- Explored the distribution of individual variables
+- Analyzed booking characteristics and customer information
+
+### 04 • Bivariate Analysis
+
+- Investigated relationships between pairs of variables
+- Explored pricing trends, booking behavior, and cancellation patterns
+
+### 05 • Multivariate Analysis
+
+- Examined relationships among multiple variables
+- Identified deeper patterns across hotel operations and customer behavior
+
+### 06 • Business Insights
+
+- Summarized analytical observations
+- Presented insights supported by the analysis
+
+---
+
+# Analysis Highlights
+
+The following visualizations summarize some of the key analyses performed during the project.
+
+<table>
+<tr>
+<td align="center">
+<b>Correlation Heatmap</b><br><br>
+<img src="visuals/correlation_heatmap.png" width="420">
+</td>
+
+<td align="center">
+<b>Cancellation Analysis</b><br><br>
+<img src="visuals/cancellation_analysis.png" width="420">
+</td>
+</tr>
+
+<tr>
+<td align="center">
+<b>Monthly Booking Analysis</b><br><br>
+<img src="visuals/monthly_booking_analysis.png" width="420">
+</td>
+
+<td align="center">
+<b>Lead Time by Market Segment</b><br><br>
+<img src="visuals/lead_time_by_market_segment.png" width="420">
+</td>
+</tr>
+
+<tr>
+<td align="center">
+<b>ADR by Hotel & Market Segment</b><br><br>
+<img src="visuals/adr_by_hotel_market_segment.png" width="420">
+</td>
+
+<td align="center">
+<b>Special Requests by Customer Type</b><br><br>
+<img src="visuals/special_requests_by_customer_type.png" width="420">
+</td>
+</tr>
+</table>
+
+---
+
+# Key Findings
+
+The exploratory data analysis highlighted several meaningful patterns within the dataset.
+
+- Booking cancellations vary across hotel types and deposit policies.
+- Longer booking lead times are more common among cancelled bookings across several market segments.
+- Room prices differ across hotel types and market segments.
+- Hotel bookings show noticeable seasonal trends throughout the year.
+- Customer booking behavior varies across customer categories based on the number of special requests.
+
+These observations demonstrate how exploratory data analysis can help understand customer behavior and support data-driven decision-making in the hospitality industry.
+
+---
+
+# Technologies Used
+
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Jupyter Notebook
+- Git
+- GitHub
+
+---
+
+# Getting Started
+
+Clone the repository.
+
+```bash
+git clone https://github.com/Pallavi415/Hotel-Booking-Analytics.git
+```
+
+Move into the project directory.
+
+```bash
+cd Hotel-Booking-Analytics
+```
+
+Install the required libraries.
+
+```bash
+pip install -r requirements.txt
+```
+
+Launch Jupyter Notebook.
+
+```bash
+jupyter notebook
+```
+
+Open the notebooks in numerical order to follow the complete analysis workflow.
+
+---
+
+# Future Improvements
+
+Some possible extensions of this project include:
+
+- Develop a machine learning model to predict booking cancellations.
+- Build an interactive dashboard using Power BI or Tableau.
+- Perform customer segmentation using clustering techniques.
+- Deploy the project using Streamlit for interactive data exploration.
+
+---
+
+# Author
+
+## Pallavi Dahiya
+
+**B.Tech – Computer Science and Engineering**
+
+This project reflects my approach to performing structured exploratory data analysis on a real-world business dataset. The focus was not only on creating visualizations but also on understanding the data, documenting each stage of the analysis, and presenting observations that could support informed business decisions.
