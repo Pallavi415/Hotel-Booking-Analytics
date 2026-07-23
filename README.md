@@ -244,6 +244,6 @@ Some possible extensions of this project include:
 
 ## Pallavi Dahiya
 
-**B.Tech – Computer Science and Engineering**
+**B.Tech – Computer Science and Engineering (Data Science)**
 
 This project reflects my approach to performing structured exploratory data analysis on a real-world business dataset. The focus was not only on creating visualizations but also on understanding the data, documenting each stage of the analysis, and presenting observations that could support informed business decisions.
